@@ -2,6 +2,7 @@
 --------------------
 
 ### 跨域问题
+账号登录需要调用uc的接口，前端加解密不好实现，统一走mgt服务器，配置反向代理解决跨域问题
 1. __开发中跨域问题解决方法__
 
     配置**config**文件夹下的**index.js**
@@ -25,7 +26,7 @@
     ```    
 2. __生产环境跨域问题解决方法__
 
-  配置nginx **conf**文件下的**nginx.conf**文件
+  配置nginx **conf**文件下的**nginx.conf**文件，配置nginx时候不能一下启动多个，会影响到重启nginx，导致配置不生效
 
   ```Josn
 
@@ -216,3 +217,18 @@ __获取图片宽高__
 __下载文件__
 
   `location.href= url`
+
+__不依赖element上传控件实现上传功能__
+
+  ```js
+    if (window.FormData)
+     {
+          var formData = new FormData();
+        //添加参数
+          formData.append();
+
+      }
+  ```
+__vue2使用axios代替vue-resource__
+不要问我那个好，为什么要用axios，我只是偶尔看到vue-resource不是官方推荐的了，
+又没用过vue-resource，也谈不上熟悉，索性就直接换成了axios.
