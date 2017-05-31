@@ -1,0 +1,22 @@
+### Gerrit账号
+Gerrit: http://172.16.2.73:8081
+user: wuchao<br>
+passwd: wuchao
+
+### gitlab账号
+gitlab:http://cloudplayer-int.haima.me:10080<br>
+user: wuchao
+passwd:123123123
+
+### 订餐账号
+
+user:wuchao@haima.me<br>
+passwd:ZZ8Ece
+
+### 邮箱账号
+user:wuchao@haima.me<br>
+passwd:wuCHAO1995
+
+###  Confluence
+user:wuchao<br>
+passwd:wuchao
