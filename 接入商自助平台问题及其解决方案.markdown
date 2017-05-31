@@ -1,4 +1,4 @@
-<center></center>
+<center>接入商自助平台问题</center>
 --------------------
 
 ### 跨域问题
@@ -176,10 +176,43 @@
   __引入element使用部分控件无效解决方法__
 
   检测element的版本，element的版本大于"element-ui": "1.2.9",就有可能失效
+  packjson中"element-ui": "^1.2.9"时候，执行npm install 下载来的element-ui不一定是
+  1.2.9,会下载最新版本
 
 
 ### vuex
 
 __页面刷新vuex管理的数据丢失__
 
-存在localstorage中
+目前解决方法存在localstorage中
+
+### 其他问题
+__enter键按下刷新当前界面__
+
+当表单只有一个输入框的时候，按enter就会submit
+
+__获取图片宽高__
+
+```JS
+            /** 选择图片上传，在上传前获取宽高
+            * @param file 要上传的文件
+            * @param callback    回调函数
+            */
+        getImgWH(file,callback){
+              //读取图片数据
+              let reader = new FileReader();
+              reader.onload = function (e) {
+                  let data = e.target.result;
+                  //加载图片获取图片真实宽度和高度
+                  let image = new Image();
+                  image.onload=function(){
+                      callback(image.width,image.height,file)
+                  };
+                  image.src= data;
+              };
+              reader.readAsDataURL(file);
+          },
+```
+__下载文件__
+
+  `location.href= url`
