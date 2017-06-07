@@ -233,3 +233,37 @@ __vue2使用axios代替vue-resource__
 
 不要问我那个好，为什么要用axios，我只是偶尔看到vue-resource不是官方推荐的了，
 又没用过vue-resource，也谈不上熟悉，索性就直接换成了axios.
+
+__打包部署问题__
+
+1. npm run build 出现err
+
+  删除node modules重新执行下npm install ，因为有些依赖没有下载完成
+
+2. 报node err
+
+  node版本问题,ubuntu上安装node会安装0.x.x类型的node版本，想安装像window上7.7.4这样的node,可以安装个nvm
+  - 安装 nvm 之后最好先删除下已安装的 node 和全局 node 模块
+  - 安装 nvm
+
+    ```shell
+
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+    ```
+    安装完成后请重新打开终端环境
+
+  - 安装切换各版本 node/npm
+    ```shell
+
+    nvm install stable #安装最新稳定版 node，现在是 5.0.0
+    nvm install 4.2.2 #安装 4.2.2 版本
+    nvm install 0.12.7 #安装 0.12.7 版本
+
+    # 特别说明：以下模块安装仅供演示说明，并非必须安装模块
+    nvm use 0 #切换至 0.12.7 版本
+    npm install -g mz-fis #安装 mz-fis 模块至全局目录，安装完成的路径是 /Users/<你的用户名>/.nvm/versions/node/v0.12.7/lib/mz-fis
+    nvm use 4 #切换至 4.2.2 版本
+    npm install -g react-native-cli #安装 react-native-cli 模块至全局目录，安装完成的路径是 /Users/<你的用户名>/.nvm/versions/node/v4.2.2/lib/react-native-cli
+
+    nvm alias default 0.12.7 #设置默认 node 版本为 0.12.7
+    ```  
